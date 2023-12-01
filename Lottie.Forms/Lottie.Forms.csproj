@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;xamarin.ios10;xamarin.mac20;monoandroid10.0;tizen40</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;xamarin.ios10;xamarin.mac20;monoandroid13.0;tizen40</TargetFrameworks>
     <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">uap10.0.18362;net472;netcoreapp3.1;$(TargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
@@ -8,13 +8,13 @@
     <AssemblyName>Lottie.Forms</AssemblyName>
     <RootNamespace>Lottie.Forms</RootNamespace>
     <Description>Render After Effects animations natively on Android, iOS, MacOS, TVOs and UWP</Description>
-    <PackageId>Com.Airbnb.Xamarin.Forms.Lottie</PackageId>
-    <Version>4.1.0</Version>
+    <PackageId>Birdie.Com.Airbnb.Xamarin.Forms.Lottie</PackageId>
+    <Version>6.2.0</Version>
     <UseWPF Condition=" '$(OS)' == 'Windows_NT' ">true</UseWPF>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
     <Compile Remove="Platforms\**\*.cs" />
     <None Include="Platforms\**\*.cs" />
     <None Include="Resources\*.cs" />
@@ -32,7 +32,7 @@
     <Compile Include="Platforms\Wpf\**\*.cs" />
     <Compile Include="Platforms\Console\**\*.cs" />
     <PackageReference Include="LottieSharp" Version="1.1.3" />
-    <PackageReference Include="Xamarin.Forms.Platform.WPF" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms.Platform.WPF" Version="5.0.0.2622" />
   </ItemGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('netcoreapp')) And '$(OS)' == 'Windows_NT' ">
@@ -42,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('uap')) ">
-  	<PackageReference Include="Microsoft.Toolkit.Uwp.UI.Lottie" Version="7.1.0" />
+  	<PackageReference Include="Microsoft.Toolkit.Uwp.UI.Lottie" Version="7.1.1" />
     <Compile Include="Platforms\Windows\**\*.cs" />
     <Compile Include="Platforms\Uap\**\*.cs" />
   </ItemGroup>
@@ -81,7 +81,7 @@
     <Compile Include="Platforms\Android\**\*.cs" />
     <Compile Include="Platforms\Xamarin\**\*.cs" />
     <ProjectReference Include="..\Lottie.Android\Lottie.Android.csproj" />
-    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.3.1.3" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.6" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('tizen')) ">
